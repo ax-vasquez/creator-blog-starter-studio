@@ -106,7 +106,10 @@ export default {
                   },
                 ],
             },
-            lists: [],
+            lists: [
+              {title: 'Bullet', value: 'bullet'},
+              {title: 'Number', value: 'number'},
+            ],
           },
           {
             type: `code`
