@@ -7,11 +7,6 @@ const highlightIcon = () => (
 const highlightRender = props => (
   <span style={{ backgroundColor: `yellow` }}>{props.children}</span>
 )
-const codeRender = props => (
-  <pre style={{
-    backgroundColor: `lightgray`
-  }}><code>{props.children}</code></pre>
-)
 
 export default {
     name: `article`,
@@ -67,21 +62,18 @@ export default {
                 { title: `Normal`, value: `normal` },
                 {title: `H1`, value: `h1`},
                 {title: `H2`, value: `h2`},
-                {title: `CodeBlock`, value: `pre`, blockEditor: {
-                  render: codeRender
-                }}
+                {title: 'Quote', value: 'blockquote'}
             ],
             marks: {
                 decorators: [
                   { title: `Strong`, value: `strong` },
                   { title: `Emphasis`, value: `em` },
-                  { title: `Code`, value: `code` },
                   { title: `Highlight`, value: `highlight`, 
                     blockEditor: {
                       icon: highlightIcon,
                       render: highlightRender
                     }
-                  }
+                  },
                 ],
                 annotations: [
                   {
@@ -111,7 +103,7 @@ export default {
                         ]
                       }
                     ]
-                  }
+                  },
                 ],
             },
             lists: [],
