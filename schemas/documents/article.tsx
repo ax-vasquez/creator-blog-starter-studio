@@ -17,7 +17,7 @@ export default {
         name: `title`,
         title: `Title`,
         type: `string`,
-        required: true,
+        validation: Rule => Rule.required()
       },
       {
         name: `slug`,
@@ -39,7 +39,7 @@ export default {
           dateFormat: `YYYY-MM-DD`,
           calendarTodayLabel: `Today`
         },
-        required: true,
+        validation: Rule => Rule.required()
       },
       {
         name: `image`,
@@ -53,7 +53,7 @@ export default {
         name: `body`,
         title: `Body`,
         type: `array`,
-        required: true,
+        validation: Rule => Rule.required(),
         of: [
           {
             title: `Block`,
@@ -115,6 +115,12 @@ export default {
             type: `code`
           }
         ],
+      },
+      {
+        name: `categories`,
+        title: `Categories`,
+        type: `array`,
+        of: [{ type: `reference`, to: [{type: `category`}] }]
       }
     ],
     preview: {
