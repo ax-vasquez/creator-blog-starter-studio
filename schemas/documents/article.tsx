@@ -74,6 +74,7 @@ export default {
                       render: highlightRender
                     }
                   },
+                  { title: `Inline-code`, value: `code` }
                 ],
                 annotations: [
                   {
