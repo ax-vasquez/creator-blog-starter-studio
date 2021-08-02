@@ -7,7 +7,7 @@ export default {
         name: `title`,
         title: `Title`,
         type: `string`,
-        required: true,
+        validation: Rule => Rule.required(),
       },
       {
         name: `slug`,
@@ -38,7 +38,7 @@ export default {
       },
       {
         name: `description`,
-        required: true,
+        validation: Rule => Rule.required(),
         title: `Description`,
         type: `array`,
         of: [
@@ -54,7 +54,7 @@ export default {
         name: `version`,
         title: `Version`,
         type: `string`,
-        required: true,
+        validation: Rule => Rule.required(),
       },
     ],
   }

@@ -42,6 +42,13 @@ export default {
         validation: Rule => Rule.required()
       },
       {
+        title: `Author`,
+        name: `author`,
+        type: `reference`,
+        to: [{ type: `creator` }],
+        validation: Rule => Rule.required()
+      },
+      {
         name: `image`,
         title: `Image`,
         type: `image`,
